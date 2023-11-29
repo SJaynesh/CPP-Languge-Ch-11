@@ -179,7 +179,55 @@ int main() {
 }
 </pre>
 
+<br><br>
 
+## OOP :
+
+<pre>
+#include<iostream>
+using namespace std;
+
+class Div {
+	
+	int a,b;
+	string error = "Can Not Divied By ZERO";
+	
+	public:
+		
+		void Divied() {
+			cout << "Enter a: ";
+			cin  >> a;
+			cout << "Enter b: ";
+			cin  >> b;
+			
+			if(b==0)
+			{
+				throw error;
+			}else {
+				
+				throw a/b;
+			}
+		}
+	
+};
+
+
+int main() {
+	
+	Div d1;
+	
+	try{
+		d1.Divied();
+	}
+	catch(string e) {
+		cout << endl << e << endl;
+	}
+	catch(int val) {
+		cout << endl << "ANS : " << val << endl;
+	}
+	
+}
+</pre>
 
 
 
