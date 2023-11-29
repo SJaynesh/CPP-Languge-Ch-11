@@ -13,6 +13,31 @@
 
 <br><br>
 
+<pre>
+#include<iostream>
+using namespace std;
+
+int main() {
+	
+	int a,b,division;
+	
+	
+	cout << "Enter a: ";
+	cin  >> a;
+	cout << "Enter b: ";
+	cin  >> b;
+	
+	division = a/b; // Cannot divide by zero Exception
+	
+	cout << endl << endl << a << " / " << b << " : " << division << endl;
+	
+	cout << "Hello C++ Language" << endl;
+	
+}
+</pre>
+
+<br><br>
+
 ## Difference between Error & Exception :
 
 <br>
@@ -71,12 +96,88 @@ It Occures by Developer. | It Occures by Developer and User both.
 
 <br><br>
 
+<pre>
+#include<iostream>
+using namespace std;
+
+int main() {
+	
+	int a,b,ans;
+	string error = "Can Not Divide By ZERO";
+	
+	
+	cout << "Enter a: ";
+	cin  >> a;
+	cout << "Enter b: ";
+	cin  >> b;
+		
+		
+	try {
+		if(b==0) {
+			throw error;
+		}
+		else {
+				ans = a/b;
+				cout << "Ans: " << ans << endl;
+		}
+	}
+	catch (string e) {
+		cout << endl << e << endl; 
+	}	
+}
+</pre>
+
+<br><br>
 
 ## Implement general exception block (using spread(…) operator):
 
+<br>
 
+<pre>
+	catch(...) {
+		- general catch block
+	}
+</pre>
 
+<br><br>
 
+<pre>
+#include<iostream>
+using namespace std;
+
+int main() {
+	
+	int a,b,ans;
+	double x;
+	string error = "Can Not Divide By ZERO";
+	
+	
+	cout << "Enter a: ";
+	cin  >> a;
+	cout << "Enter b: ";
+	cin  >> b;
+		
+		
+	try {
+		if(b==0) {
+			throw error;
+		}
+		else {
+				ans = a/b;
+				throw x;
+		}
+	}
+	catch (string e) {
+		cout << endl << e << endl; 
+	}	
+	catch (int val) {
+		cout << endl << "ANS: " << val << endl;
+	}
+	catch(...) {
+		cout << endl << "General Exception" << endl;
+	}
+}
+</pre>
 
 
 
